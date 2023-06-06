@@ -23,10 +23,10 @@ Route::post('/api/v1/hotels','HotelController@store');
 Route::post('/api/v1/roomhotel','HotelController@roomhotel');
 
 //HOTEL SHOW
-Route::get('/api/v1/hotels/{author}','HotelController@show');
+Route::get('/api/v1/hotels/{hotel}','HotelController@show');
 
 //HOTEL UPDATE
-Route::put('/api/v1/hotels/{author}','HotelController@update');
+Route::put('/api/v1/hotels/{hotel}','HotelController@update');
 
 //HOTEL DESTROY
-Route::patch('/api/v1/hotels/{author}','HotelController@destroy');
+Route::patch('/api/v1/hotels/{hotel}','HotelController@destroy');

@@ -63,9 +63,9 @@ class HotelController extends Controller
      * @param  \App\Models\Hotels  $hotels
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotels $hotels)
-    {
-        //
+    public function show($hotel){
+        $model = Hotel::findOrFail($hotel);
+        return $this->successResponse($model);
     }
 
     /**
@@ -74,9 +74,9 @@ class HotelController extends Controller
      * @param  \App\Models\Hotels  $hotels
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotels $hotels)
+    public function edit(Request $request)
     {
-        //
+        
     }
 
     /**
