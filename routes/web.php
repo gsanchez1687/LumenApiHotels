@@ -13,6 +13,20 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+//HOTEL INDEX
+Route::get('/api/v1/hotels','HotelController@index');
+
+//HOTEL STORE
+Route::post('/api/v1/hotels','HotelController@store');
+
+//HOTEL ROOMHOTEL
+Route::post('/api/v1/roomhotel','HotelController@roomhotel');
+
+//HOTEL SHOW
+Route::get('/api/v1/hotels/{author}','HotelController@show');
+
+//HOTEL UPDATE
+Route::put('/api/v1/hotels/{author}','HotelController@update');
+
+//HOTEL DESTROY
+Route::patch('/api/v1/hotels/{author}','HotelController@destroy');
