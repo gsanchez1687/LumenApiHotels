@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rooms;
+use App\Models\Room;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+    use ApiResponser;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-       
+        $model = Room::where('status','=',1)->get();
+        return $this->successResponse($model);
     }
 
     /**

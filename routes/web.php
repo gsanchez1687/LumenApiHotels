@@ -30,3 +30,7 @@ Route::put('/api/v1/hotels/{hotel}','HotelController@update');
 
 //HOTEL DESTROY
 Route::patch('/api/v1/hotels/{hotel}','HotelController@destroy');
+
+
+//ROOM INDEX
+Route::get('/api/v1/rooms','RoomController@index');

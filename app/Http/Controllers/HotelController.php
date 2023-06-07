@@ -7,7 +7,6 @@ use App\Models\Hotels;
 use App\Models\RoomHotel;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class HotelController extends Controller
 {
