@@ -22,7 +22,6 @@ class HotelController extends Controller
         return $this->successResponse($model);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -45,6 +44,8 @@ class HotelController extends Controller
         return $this->successResponse($hotel);
     }
 
+    //Guarda en la tabla room_hotel
+    //Establece las habitaciones por hotel
     public function roomhotel(Request $request){
         $rules = [
             'hotel_id'=>'required|min:1',
@@ -52,6 +53,7 @@ class HotelController extends Controller
             'amount'=>'required',
         ];
         $this->validate($request,$rules);
+        //Consulto
         $roomhotel = RoomHotel::create($request->all());
         return $this->successResponse($roomhotel);
     }
