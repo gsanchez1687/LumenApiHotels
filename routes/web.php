@@ -37,3 +37,6 @@ Route::patch('/api/v1/hotels/{hotel}','HotelController@destroy');
 
 //ROOM INDEX
 Route::get('/api/v1/rooms','RoomController@index');
+
+//City
+Route::get('/api/v1/city','CityController@getcities');
