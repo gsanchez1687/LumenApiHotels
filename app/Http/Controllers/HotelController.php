@@ -56,6 +56,17 @@ class HotelController extends Controller
         return $this->successResponse($roomhotel);
     }
 
+    public function gethotel($hotel){
+
+        $RoomHotelModel = RoomHotel::join("hotels", "hotels.id", "=", "rooms_hotels.hotel_id")
+        ->join("rooms","rooms.id","=","rooms_hotels.room_id")
+        ->join("cities","cities.id","=","hotels.city_id")
+        ->select("hotels.name","hotels.nit","hotels.phone","hotels.address","hotels.email","hotels.amount","cities.name as city","rooms_hotels.amount as rhamount","rooms.name as nameroom","rooms.accommodation")
+        ->where("rooms_hotels.hotel_id", "=", $hotel)
+        ->get();
+        return $this->successResponse($RoomHotelModel);
+    }
+
     /**
      * Display the specified resource.
      *

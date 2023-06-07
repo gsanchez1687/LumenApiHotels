@@ -22,6 +22,9 @@ Route::post('/api/v1/hotels','HotelController@store');
 //HOTEL ROOMHOTEL
 Route::post('/api/v1/roomhotel','HotelController@roomhotel');
 
+//HOTEL GETROOMHOTEL
+Route::get('/api/v1/gethotel/{hotel}','HotelController@gethotel');
+
 //HOTEL SHOW
 Route::get('/api/v1/hotels/{hotel}','HotelController@show');
 
