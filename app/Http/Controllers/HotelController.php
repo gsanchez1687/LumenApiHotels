@@ -18,7 +18,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $model = Hotel::all();
+        $model = Hotel::orderBy('id','DESC')->get();
         return $this->successResponse($model);
     }
 
